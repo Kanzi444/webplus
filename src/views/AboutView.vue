@@ -1,48 +1,49 @@
 <template>
-  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-65px)] flex flex-col justify-center">
-    <div class="max-w-4xl mx-auto text-center space-y-6">
+  <div class="min-h-screen font-sans text-slate-800 flex flex-col bg-gradient-to-b from-white via-emerald-800/20 to-emerald-950 py-10 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto w-full bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-12 space-y-10">
       
-      <div class="inline-block text-xs font-bold text-amber-400 tracking-widest uppercase bg-amber-500/10 px-3 py-1 rounded border border-amber-500/30">
-        Tentang Perusahaan
+      <!-- Header -->
+      <div class="flex flex-col sm:flex-row justify-between items-center border-b pb-4 border-slate-100 gap-4">
+        <div class="flex items-center space-x-3">
+          <img src="/logo-soplus.jpg" alt="SO PLUS" class="h-10 w-auto object-contain" />
+          <span class="text-xl font-black text-emerald-950 tracking-wider">PT PINUS LANCAR USAHA SEMESTA</span>
+        </div>
+        <span class="text-xs font-bold text-emerald-800 tracking-widest uppercase border-b-2 border-amber-500 pb-1">COMPANY PROFILE 2026</span>
       </div>
-      
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-snug">
-        PT PINUS LANCAR USAHA SEMESTA
-      </h2>
-      
-      <p class="text-emerald-100 leading-relaxed text-sm sm:text-base text-justify sm:text-center">
-        <strong>PT Pinus Lancar Usaha Semesta</strong> merupakan perusahaan nasional berbadan hukum resmi yang bergerak di bidang <strong>Distribusi, Perdagangan Umum, Konstruksi, Pergudangan,</strong> serta <strong>Layanan Kebandaraan</strong>.
-      </p>
 
-      <p class="text-emerald-200/80 leading-relaxed text-xs sm:text-sm text-justify sm:text-center">
-        Berlokasi strategis di Kota Bandung, kami berkomitmen untuk menjadi mitra bisnis tepercaya dengan menghadirkan standar operasional tinggi, efisiensi rantai pasok, integritas legalitas yang lengkap, serta solusi layanan yang berorientasi pada kepuasan mitra kerja dan klien di seluruh wilayah Indonesia.
-      </p>
-
-      <!-- Informasi Alamat & Telepon -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-6 border-t border-emerald-800/60 text-left">
-        <div class="bg-emerald-900/40 p-4 rounded-xl border border-emerald-700/40 flex items-start space-x-3">
-          <span class="text-amber-400 text-xl">📍</span>
-          <div>
-            <h4 class="text-xs font-bold text-amber-300 uppercase tracking-wider">Alamat Operasional</h4>
-            <p class="text-xs text-emerald-100 mt-1">Jl. Arjuna No. 85, Kel. Arjuna, Kec. Cicendo, Kota Bandung, Jawa Barat</p>
+      <!-- Konten Utama -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-4 space-y-4">
+          <div class="bg-gradient-to-br from-emerald-900 via-emerald-950 to-slate-900 text-white rounded-2xl p-6 shadow-xl border-2 border-amber-500/30 text-center space-y-4">
+            <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider">SO PLUS</h3>
+            <p class="text-xs text-slate-200">DISTRIBUSI - TRADING - CONSTRUCTION</p>
+            <p class="text-xs italic text-amber-300 font-serif">“Delivering Excellence, Building the Future”</p>
           </div>
         </div>
 
-        <div class="bg-emerald-900/40 p-4 rounded-xl border border-emerald-700/40 flex items-start space-x-3">
-          <span class="text-amber-400 text-xl">📞</span>
-          <div>
-            <h4 class="text-xs font-bold text-amber-300 uppercase tracking-wider">Kontak Resmi</h4>
-            <p class="text-xs text-emerald-100 mt-1">Telepon: 022 5239 0070</p>
+        <div class="lg:col-span-8 space-y-6">
+          <h2 class="text-3xl sm:text-4xl font-serif font-black text-emerald-950 tracking-wide uppercase">TENTANG PERUSAHAAN</h2>
+          
+          <div class="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base text-justify">
+            <div class="p-4 bg-slate-50 rounded-xl border-l-4 border-amber-500 shadow-sm">
+              <strong>PT Pinus Lancar Usaha Semesta</strong> merupakan perusahaan nasional yang bergerak di bidang Distribusi, Perdagangan Umum, dan Konstruksi dengan komitmen menghadirkan solusi bisnis yang profesional, terpercaya, dan berkelanjutan.
+            </div>
+            <div class="p-4 bg-slate-50 rounded-xl border-l-4 border-emerald-800 shadow-sm">
+              Didukung oleh sumber daya manusia yang kompeten, sistem kerja yang efektif, serta jaringan kemitraan yang luas, perusahaan terus berkembang menjadi mitra strategis bagi pemerintah, BUMN, swasta, maupun berbagai sektor industri di Indonesia.
+            </div>
+            <div class="p-4 bg-slate-50 rounded-xl border-l-4 border-amber-500 shadow-sm">
+              Kami percaya bahwa keberhasilan perusahaan dibangun melalui integritas, kualitas layanan, inovasi, serta kepuasan pelanggan sebagai prioritas utama.
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="pt-6">
-        <router-link to="/" class="inline-block text-xs font-bold text-amber-300 hover:text-amber-200 uppercase tracking-wider border-b border-amber-400/50 pb-1">
-          ← Kembali ke Beranda
-        </router-link>
       </div>
 
     </div>
-  </section>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'AboutView'
+}
+</script>
