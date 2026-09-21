@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen font-sans text-slate-800 flex flex-col bg-gradient-to-b from-white via-emerald-800/20 to-emerald-950 py-10 px-4 sm:px-6">
-    <div class="max-w-7xl mx-auto w-full bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-12 space-y-10">
+  <div class="min-h-screen font-sans text-slate-800 flex flex-col bg-gradient-to-b from-white via-emerald-800/20 to-emerald-950 py-10 px-4 sm:px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto w-full bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-12 space-y-10 animate-smooth-fade-in">
       
       <!-- Header -->
-      <div class="flex flex-col sm:flex-row justify-between items-center border-b pb-4 border-slate-100 gap-4">
+      <div class="flex flex-col sm:flex-row justify-between items-center border-b pb-4 border-slate-100 gap-4 animate-slide-down">
         <div class="flex items-center space-x-3">
           <img src="/logo-soplus.jpg" alt="SO PLUS" class="h-10 w-auto object-contain" />
           <span class="text-xl font-black text-emerald-950 tracking-wider">PT PINUS LANCAR USAHA SEMESTA</span>
@@ -13,7 +13,7 @@
 
       <!-- Konten Utama -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-4 space-y-4">
+        <div class="lg:col-span-4 space-y-4 animate-fade-in-left">
           <div class="bg-gradient-to-br from-emerald-900 via-emerald-950 to-slate-900 text-white rounded-2xl p-6 shadow-xl border-2 border-amber-500/30 text-center space-y-4">
             <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider">SO PLUS</h3>
             <p class="text-xs text-slate-200">DISTRIBUSI - TRADING - CONSTRUCTION</p>
@@ -21,7 +21,7 @@
           </div>
         </div>
 
-        <div class="lg:col-span-8 space-y-6">
+        <div class="lg:col-span-8 space-y-6 animate-fade-in-right">
           <h2 class="text-3xl sm:text-4xl font-serif font-black text-emerald-950 tracking-wide uppercase">TENTANG PERUSAHAAN</h2>
           
           <div class="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base text-justify">
@@ -47,3 +47,27 @@ export default {
   name: 'AboutView'
 }
 </script>
+
+<style>
+@keyframes smoothFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInCardLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInCardRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-smooth-fade-in { animation: smoothFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-slide-down { animation: slideDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fade-in-left { animation: fadeInCardLeft 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0; }
+.animate-fade-in-right { animation: fadeInCardRight 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; opacity: 0; }
+</style>

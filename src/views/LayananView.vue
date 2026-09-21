@@ -1,11 +1,11 @@
 <template>
-  <div class="min-h-screen font-sans text-slate-800 flex flex-col justify-between bg-gradient-to-b from-white via-emerald-800/20 to-emerald-950">
+  <div class="min-h-screen font-sans text-slate-800 flex flex-col justify-between bg-gradient-to-b from-white via-emerald-800/20 to-emerald-950 overflow-hidden">
     
     <!-- KONTEN UTAMA LAYANAN -->
-    <main class="max-w-7xl mx-auto px-4 py-8 sm:py-12 w-full flex-grow space-y-10">
+    <main class="max-w-7xl mx-auto px-4 py-8 sm:py-12 w-full flex-grow space-y-10 animate-smooth-fade-in">
       
       <!-- HEADER TITLE -->
-      <div class="text-center max-w-3xl mx-auto space-y-3">
+      <div class="text-center max-w-3xl mx-auto space-y-3 animate-slide-down">
         <h2 class="text-3xl sm:text-5xl font-serif font-black text-emerald-950 tracking-tight uppercase drop-shadow-sm">
           LAYANAN <span class="text-amber-500">— KAMI —</span>
         </h2>
@@ -20,7 +20,7 @@
       </div>
 
       <!-- GRID LAYANAN DENGAN GAMBAR/ILUSTRASI -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up">
         <div 
           v-for="(layanan, index) in layananList" 
           :key="index" 
@@ -63,7 +63,7 @@
     </main>
 
     <!-- FOOTER / MOTTO -->
-    <footer class="bg-emerald-950 border-t border-amber-500/30 py-4 text-center mt-auto">
+    <footer class="bg-emerald-950 border-t border-amber-500/30 py-4 text-center mt-auto animate-fade-in-up">
       <p class="text-xs font-bold text-amber-400 tracking-widest uppercase">
         MITRA USAHA TERPERCAYA, TAAT HUKUM, DAN PROFESIONAL
       </p>
@@ -128,3 +128,22 @@ export default {
   }
 }
 </script>
+
+<style>
+@keyframes smoothFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUpFooter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-smooth-fade-in { animation: smoothFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-slide-down { animation: slideDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fade-in-up { animation: fadeInUpFooter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; opacity: 0; }
+</style>

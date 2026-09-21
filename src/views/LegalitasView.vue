@@ -1,11 +1,11 @@
 <template>
-  <div class="min-h-screen font-sans text-slate-800 flex flex-col justify-between bg-gradient-to-b from-white via-emerald-800/20 to-emerald-950">
+  <div class="min-h-screen font-sans text-slate-800 flex flex-col justify-between bg-gradient-to-b from-white via-emerald-800/20 to-emerald-950 overflow-hidden">
     
     <!-- KONTEN UTAMA LEGALITAS -->
-    <main class="max-w-6xl mx-auto px-4 py-8 sm:py-12 w-full flex-grow space-y-12">
+    <main class="max-w-6xl mx-auto px-4 py-8 sm:py-12 w-full flex-grow space-y-12 animate-smooth-fade-in">
       
       <!-- HEADER TITLE -->
-      <div class="text-center max-w-3xl mx-auto space-y-3">
+      <div class="text-center max-w-3xl mx-auto space-y-3 animate-slide-down">
         <h2 class="text-3xl sm:text-5xl font-serif font-black text-emerald-950 tracking-tight uppercase drop-shadow-sm">
           LEGALITAS <span class="text-amber-500">— PERUSAHAAN —</span>
         </h2>
@@ -20,7 +20,7 @@
       </div>
 
       <!-- SEKSI 1: AKTA & PENGESAHAN BADAN HUKUM (01 - 04) -->
-      <div class="space-y-6">
+      <div class="space-y-6 animate-fade-in-up">
         <div class="border-l-4 border-amber-500 pl-4 py-1">
           <h3 class="text-lg sm:text-xl font-black text-emerald-950 uppercase tracking-wider">
             I. Akta & Pengesahan Badan Hukum
@@ -124,7 +124,7 @@
       </div>
 
       <!-- SEKSI 2: PERIZINAN USAHA & PERPAJAKAN (05 - 07) -->
-      <div class="space-y-6 pt-4">
+      <div class="space-y-6 pt-4 animate-fade-in-up">
         <div class="border-l-4 border-amber-500 pl-4 py-1">
           <h3 class="text-lg sm:text-xl font-black text-emerald-950 uppercase tracking-wider">
             II. Perizinan Usaha & Perpajakan
@@ -208,7 +208,7 @@
       </div>
 
       <!-- KOTAK KOMITMEN KAMI -->
-      <div class="bg-emerald-950 border border-amber-500/60 rounded-2xl p-6 sm:p-8 text-white shadow-2xl space-y-6">
+      <div class="bg-emerald-950 border border-amber-500/60 rounded-2xl p-6 sm:p-8 text-white shadow-2xl space-y-6 animate-fade-in-up">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-amber-500 text-emerald-950 flex items-center justify-center font-bold text-lg">
             🛡️
@@ -252,7 +252,7 @@
     </main>
 
     <!-- FOOTER / MOTTO -->
-    <footer class="bg-emerald-950 border-t border-amber-500/30 py-4 text-center mt-auto">
+    <footer class="bg-emerald-950 border-t border-amber-500/30 py-4 text-center mt-auto animate-fade-in-up">
       <p class="text-xs font-bold text-amber-400 tracking-widest uppercase">
         MITRA USAHA TERPERCAYA, TAAT HUKUM, DAN PROFESIONAL
       </p>
@@ -269,3 +269,22 @@ export default {
   name: 'LegalitasView'
 }
 </script>
+
+<style>
+@keyframes smoothFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUpFooter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-smooth-fade-in { animation: smoothFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-slide-down { animation: slideDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fade-in-up { animation: fadeInUpFooter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; opacity: 0; }
+</style>
